@@ -117,6 +117,8 @@ public class HotW_herbs {
 		}
 		System.out.println("Total number of pickups: " + totalPickups);
 		
+		lowHerbsPrint(Herbs);
+		
 		csv_writer Csv_writer = new csv_writer("Test.csv", 9);
 		String[] HerbHeader = {"Herb", "Crimson", "Umber", "Verdant", "Amber", "Sapphire", "Violet", "Golden", "Total pickups"};
 		
@@ -139,6 +141,22 @@ public class HotW_herbs {
 		}
 		
 		Csv_writer.closeFile();
+	}
+	
+	private static void lowHerbsPrint(HashMap<String, Herb> Herbs) {
+		System.out.println("\nHerbs with under 100 pickups");
+		for (Herb temp : Herbs.values()) {
+			if (temp.getNumOfPickups() <100) {
+				System.out.println(temp.getName() + " (" + temp.getNumOfPickups() + ")");
+			}
+		}
+		
+		System.out.println("\nHerbs with under 200 pickups");
+		for (Herb temp : Herbs.values()) {
+			if (temp.getNumOfPickups() >99 && temp.getNumOfPickups() <200) {
+				System.out.println(temp.getName() + " (" + temp.getNumOfPickups() + ")");
+			}
+		}
 	}
 
 }
