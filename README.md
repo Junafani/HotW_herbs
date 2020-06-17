@@ -13,18 +13,18 @@ Format of input CSV file is following:
 
 Example:
 
-Herb,Crimson Extract,Umber Extract,Verdant Extract,Amber Extract,Sapphire Extract,Violet Extract,Golden Extract
+```Herb,Crimson Extract,Umber Extract,Verdant Extract,Amber Extract,Sapphire Extract,Violet Extract,Golden Extract
 Horsetail,,2,,,,,
 Vetchling,2,,,,,,
 Vetchling,2,,,,,,
 Rock-rose,3,1,,,,,
-Buckthorn,2,,2,,,,
+Buckthorn,2,,2,,,,```
 
-##Output file
+## Output file
 
 Program outputs file "Test.csv" which has average pickup rates for each phial per herb.
 
-##TODO
+## TODO
 -Print herbs with better order
 -Add generating of wikimedia table for copypasting to lotro wiki.
 -Add logging of each number of different amount of phial drops.
