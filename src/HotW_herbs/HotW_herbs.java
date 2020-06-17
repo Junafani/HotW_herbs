@@ -117,16 +117,15 @@ public class HotW_herbs {
 		}
 		System.out.println("Total number of pickups: " + totalPickups);
 		
-		System.out.println("lol test");
-		csv_writer Csv_writer = new csv_writer("Test.csv", 8);
-		String[] HerbHeader = {"Herb", "Crimson", "Umber", "Verdant", "Amber", "Sapphire", "Violet", "Golden"};
+		csv_writer Csv_writer = new csv_writer("Test.csv", 9);
+		String[] HerbHeader = {"Herb", "Crimson", "Umber", "Verdant", "Amber", "Sapphire", "Violet", "Golden", "Total pickups"};
 		
 		Csv_writer.writeHeader(HerbHeader);
 		
 		for (Herb temp : Herbs.values()) {
 			totalPickups += temp.getNumOfPickups();
 			
-			String[] printOut = new String[8];
+			String[] printOut = new String[9];
 			printOut[0] = temp.getName();
 			printOut[1] = String.valueOf(temp.CrimsonPerPickup());
 			printOut[2] = String.valueOf(temp.UmberPerPickup());
@@ -135,6 +134,7 @@ public class HotW_herbs {
 			printOut[5] = String.valueOf(temp.SapphirePerPickup());
 			printOut[6] = String.valueOf(temp.VioletPerPickup());
 			printOut[7] = String.valueOf(temp.GoldenPerPickup());
+			printOut[8] = String.valueOf(temp.getNumOfPickups());
 			Csv_writer.writeRow(printOut);
 		}
 		
