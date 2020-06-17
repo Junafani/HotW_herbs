@@ -14,11 +14,11 @@ Format of input CSV file is following:
 Example:
 
 ```Herb,Crimson Extract,Umber Extract,Verdant Extract,Amber Extract,Sapphire Extract,Violet Extract,Golden Extract
-Horsetail,,2,,,,,
-Vetchling,2,,,,,,
-Vetchling,2,,,,,,
-Rock-rose,3,1,,,,,
-Buckthorn,2,,2,,,,
+Horsetail,,2,,,,,  
+Vetchling,2,,,,,,  
+Vetchling,2,,,,,,  
+Rock-rose,3,1,,,,,  
+Buckthorn,2,,2,,,,  
 ```
 
 ## Output file
