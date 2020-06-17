@@ -18,7 +18,8 @@ Horsetail,,2,,,,,
 Vetchling,2,,,,,,
 Vetchling,2,,,,,,
 Rock-rose,3,1,,,,,
-Buckthorn,2,,2,,,,```
+Buckthorn,2,,2,,,,
+```
 
 ## Output file
 
