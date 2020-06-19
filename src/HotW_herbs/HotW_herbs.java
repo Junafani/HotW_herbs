@@ -118,6 +118,7 @@ public class HotW_herbs {
 			System.out.println("Golden per pickup: " + temp.GoldenPerPickup());
 			System.out.println();
 		}
+		
 		System.out.println("Total number of pickups: " + totalPickups);
 		
 		lowHerbsPrint(Herbs);
@@ -145,7 +146,8 @@ public class HotW_herbs {
 		
 		Csv_writer.closeFile();
 		
-		wikiTableWriter WikiTableWriter = new wikiTableWriter("to_wiki.txt", 2, "wikitable", "Testing");
+		wikiTableWriter WikiTableWriter = new wikiTableWriter("to_wiki.txt", 9, "wikitable", "Testing");
+		WikiTableWriter.writeHeader(HerbHeader);
 		WikiTableWriter.closeFile();
 	}
 	

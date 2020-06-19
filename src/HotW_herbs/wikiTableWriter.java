@@ -51,7 +51,7 @@ public class wikiTableWriter {
 		} else {
 			hasCaption=true;
 			try {
-				openedFile.append("|+" + caption + "\n|-");
+				openedFile.append("|+" + caption + "\n|-\n");
 			} catch (IOException e) {
 				System.out.println("Error writing the caption of wikitable");
 				e.printStackTrace();
@@ -59,8 +59,22 @@ public class wikiTableWriter {
 		}
 	}
 	
+	public void writeHeader(String[] header) {
+		for (int i=0; i<columns; i++) {
+			try {
+				openedFile.append("! ");
+				openedFile.append(header[i]);
+				openedFile.append("\n");
+			} catch (IOException e) {
+				System.out.println("Error writing header column: " + i + " with data \"" + header[i] + "\"");
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	public void closeFile() {		
 		try {
+			openedFile.append("|}");
 			openedFile.flush();
 			openedFile.close();
 		} catch (IOException e) {
