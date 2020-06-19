@@ -10,7 +10,6 @@ public class wikiTableWriter {
 	private boolean hasCaption;
 	private int rows;
 	private int columns;
-	private String wikiclass;
 	
 	public wikiTableWriter (String name, int columns, String wikiclass, String caption) {
 		try {
@@ -70,6 +69,31 @@ public class wikiTableWriter {
 				e.printStackTrace();
 			}
 		}
+		
+		hasHeader=true;
+	}
+	
+	public void writeRow(String[] rowOfData) {
+		
+		try {
+			openedFile.append("|-\n");
+		} catch (IOException e1) {
+			System.out.println("Error starting a new row");
+			e1.printStackTrace();
+		}
+		
+		for (int i=0; i<columns; i++) {
+			try {
+				openedFile.append("|");
+				openedFile.append(rowOfData[i]);
+				openedFile.append("\n");
+			} catch (IOException e) {
+				System.out.println("Error writing row: " + rows + "  column: " + i + " with data \"" + rowOfData[i] + "\"");
+				e.printStackTrace();
+			}
+		}
+		
+		rows++;
 	}
 	
 	public void closeFile() {		

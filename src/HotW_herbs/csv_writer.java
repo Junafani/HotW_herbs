@@ -23,7 +23,7 @@ public class csv_writer {
 	}
 	
 	public void writeHeader(String[] header) {
-		for (int i=0; i<columns; i++) {
+		for (int i=0; i<columns-1; i++) {
 			try {
 				openedFile.append(header[i]);
 				openedFile.append(",");

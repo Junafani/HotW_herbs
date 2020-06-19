@@ -148,6 +148,23 @@ public class HotW_herbs {
 		
 		wikiTableWriter WikiTableWriter = new wikiTableWriter("to_wiki.txt", 9, "wikitable", "Testing");
 		WikiTableWriter.writeHeader(HerbHeader);
+		
+		for (Herb temp : Herbs.values()) {
+			totalPickups += temp.getNumOfPickups();
+			
+			String[] printOut = new String[9];
+			printOut[0] = temp.getName();
+			printOut[1] = String.valueOf(temp.CrimsonPerPickup());
+			printOut[2] = String.valueOf(temp.UmberPerPickup());
+			printOut[3] = String.valueOf(temp.VerdantPerPickup());
+			printOut[4] = String.valueOf(temp.AmberPerPickup());
+			printOut[5] = String.valueOf(temp.SapphirePerPickup());
+			printOut[6] = String.valueOf(temp.VioletPerPickup());
+			printOut[7] = String.valueOf(temp.GoldenPerPickup());
+			printOut[8] = String.valueOf(temp.getNumOfPickups());
+			WikiTableWriter.writeRow(printOut);
+		}
+		
 		WikiTableWriter.closeFile();
 	}
 	
