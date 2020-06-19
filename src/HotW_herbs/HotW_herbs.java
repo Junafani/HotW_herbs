@@ -10,6 +10,9 @@ public class HotW_herbs {
 
 	public static void main(String[] args) throws IOException {
 		HashMap<String, Herb> Herbs = new HashMap<String, Herb>();
+		String herbNames[] = {"Vetchling", "Horsetail", "Oxlip", "Southron's Crown", "Dwarfsbeard",
+				"Elfspear", "Drakewort", "Bell-O-Dale", "Rock-rose", "Larkspur", "Buckthorn",
+				"Dusknettle", "Bonemallow", "Wraithscowl", "Eye-of-Night", "Evengleam", "Mournweed"};
 		
 		Herb Vetchling = new Herb("Vetchling");
 		Herbs.put("Vetchling", Vetchling);
@@ -141,6 +144,9 @@ public class HotW_herbs {
 		}
 		
 		Csv_writer.closeFile();
+		
+		wikiTableWriter WikiTableWriter = new wikiTableWriter("to_wiki.txt", 2, "wikitable", "Testing");
+		WikiTableWriter.closeFile();
 	}
 	
 	private static void lowHerbsPrint(HashMap<String, Herb> Herbs) {
@@ -158,5 +164,7 @@ public class HotW_herbs {
 			}
 		}
 	}
+	
+	
 
 }
