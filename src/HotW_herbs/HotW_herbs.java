@@ -125,7 +125,7 @@ public class HotW_herbs {
 		
 		lowHerbsPrint(Herbs);
 		
-		csv_writer Csv_writer = new csv_writer("Test.csv", 9);
+		csv_writer Csv_writer = new csv_writer("Output.csv", 9);
 		String[] HerbHeader = {"Herb", "Crimson", "Umber", "Verdant", "Amber", "Sapphire", "Violet", "Golden", "Total pickups"};
 		
 		Csv_writer.writeHeader(HerbHeader);
@@ -147,7 +147,7 @@ public class HotW_herbs {
 		
 		Csv_writer.closeFile();
 		
-		wikiTableWriter WikiTableWriter = new wikiTableWriter("to_wiki.txt", 9, "wikitable", "Testing");
+		wikiTableWriter WikiTableWriter = new wikiTableWriter("to_wiki.txt", 9, "wikitable", "Phial drop rates");
 		WikiTableWriter.writeHeader(HerbHeader);
 		
 		for (String currentPrintHerb : herbNames) {
