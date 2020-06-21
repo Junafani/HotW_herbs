@@ -105,9 +105,10 @@ public class HotW_herbs {
 		
 		int totalPickups = 0;
 		
-		for (Herb temp : Herbs.values()) {
+		for (String currentPrintHerb : herbNames) {
+			Herb temp = Herbs.get(currentPrintHerb);
 			totalPickups += temp.getNumOfPickups();
-		
+			
 			System.out.println("Herb: " + temp.getName() + " (Pickups: " + temp.getNumOfPickups() + ")");
 			System.out.println("Crimson per pickup: " + temp.CrimsonPerPickup());
 			System.out.println("Umber per pickup: " + temp.UmberPerPickup());
@@ -128,9 +129,8 @@ public class HotW_herbs {
 		
 		Csv_writer.writeHeader(HerbHeader);
 		
-		for (Herb temp : Herbs.values()) {
-			totalPickups += temp.getNumOfPickups();
-			
+		for (String currentPrintHerb : herbNames) {
+			Herb temp = Herbs.get(currentPrintHerb);
 			String[] printOut = new String[9];
 			printOut[0] = temp.getName();
 			printOut[1] = String.valueOf(temp.CrimsonPerPickup());
@@ -149,9 +149,8 @@ public class HotW_herbs {
 		wikiTableWriter WikiTableWriter = new wikiTableWriter("to_wiki.txt", 9, "wikitable", "Testing");
 		WikiTableWriter.writeHeader(HerbHeader);
 		
-		for (Herb temp : Herbs.values()) {
-			totalPickups += temp.getNumOfPickups();
-			
+		for (String currentPrintHerb : herbNames) {
+			Herb temp = Herbs.get(currentPrintHerb);
 			String[] printOut = new String[9];
 			printOut[0] = temp.getName();
 			printOut[1] = String.valueOf(temp.CrimsonPerPickup());

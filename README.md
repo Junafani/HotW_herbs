@@ -25,8 +25,6 @@ Buckthorn,2,,2,,,,
 
 Program outputs file "Test.csv" which has average pickup rates for each phial per herb.
 
-## TODO
--Print herbs with better order
--Add generating of wikimedia table for copypasting to lotro wiki.
--Add logging of each number of different amount of phial drops.
+## TODO  
+-Add nicer printing to wiki table. No "0.02348239541232132346567545767" but "2.35%"
 -Calculate percentage of different amount of phial drops.
