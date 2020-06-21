@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 public class HotW_herbs {
@@ -150,16 +151,17 @@ public class HotW_herbs {
 		WikiTableWriter.writeHeader(HerbHeader);
 		
 		for (String currentPrintHerb : herbNames) {
+			DecimalFormat number_format = new DecimalFormat( "##0.00" );
 			Herb temp = Herbs.get(currentPrintHerb);
 			String[] printOut = new String[9];
 			printOut[0] = temp.getName();
-			printOut[1] = String.valueOf(temp.CrimsonPerPickup());
-			printOut[2] = String.valueOf(temp.UmberPerPickup());
-			printOut[3] = String.valueOf(temp.VerdantPerPickup());
-			printOut[4] = String.valueOf(temp.AmberPerPickup());
-			printOut[5] = String.valueOf(temp.SapphirePerPickup());
-			printOut[6] = String.valueOf(temp.VioletPerPickup());
-			printOut[7] = String.valueOf(temp.GoldenPerPickup());
+			printOut[1] = String.valueOf(number_format.format(temp.CrimsonPerPickup()*100)) + " %";
+			printOut[2] = String.valueOf(number_format.format(temp.UmberPerPickup()*100)) + " %";
+			printOut[3] = String.valueOf(number_format.format(temp.VerdantPerPickup()*100)) + " %";
+			printOut[4] = String.valueOf(number_format.format(temp.AmberPerPickup()*100)) + " %";
+			printOut[5] = String.valueOf(number_format.format(temp.SapphirePerPickup()*100)) + " %";
+			printOut[6] = String.valueOf(number_format.format(temp.VioletPerPickup()*100)) + " %";
+			printOut[7] = String.valueOf(number_format.format(temp.GoldenPerPickup()*100)) + " %";
 			printOut[8] = String.valueOf(temp.getNumOfPickups());
 			WikiTableWriter.writeRow(printOut);
 		}

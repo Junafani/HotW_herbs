@@ -26,5 +26,4 @@ Buckthorn,2,,2,,,,
 Program outputs file "Test.csv" which has average pickup rates for each phial per herb.
 
 ## TODO  
--Add nicer printing to wiki table. No "0.02348239541232132346567545767" but "2.35%"
 -Calculate percentage of different amount of phial drops.
