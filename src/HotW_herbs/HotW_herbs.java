@@ -69,33 +69,40 @@ public class HotW_herbs {
 		File file = new File("data.csv");
 		BufferedReader csvReader = new BufferedReader(new FileReader(file));
 		
-		//Read header
+		//Read header and discard it
 		csvReader.readLine();
 		
 		
 		String row;
+		int row_number=1;
 		
 		while ((row = csvReader.readLine()) != null) {
-			
+			row_number++;
 			//Needs -1 parameter so split does not stop at first empty spot.
 		    String[] data = row.split(",", -1);
 		    
 		    String name = data[0];
 		    
 		    int phials[] = new int[7];
+		    int total_phials = 0;
 		    for (int i = 1; i <data.length; i++) {
 		    	if (data[i].length()==0) {
 		    		phials[i-1] = 0;
 		    	} else {
 		    		phials[i-1] = Integer.parseInt(data[i]);
+		    		total_phials =+ Integer.parseInt(data[i]);
 		    	}		    	
 		    }
 		    
-		    Herb temp = Herbs.get(name);
-		    try {
-		    temp.addPickup(phials[0], phials[1], phials[2], phials[3], phials[4], phials[5], phials[6]);
-		    } catch (NullPointerException e) {
-		    	System.out.println("Error at " + name);
+		    if (total_phials==0) {
+		    	System.out.println("Empty row at " + row_number);
+		    } else {		    
+		    	Herb temp = Herbs.get(name);
+		    	try {
+		    		temp.addPickup(phials[0], phials[1], phials[2], phials[3], phials[4], phials[5], phials[6]);
+		    	} catch (NullPointerException e) {
+		    		System.out.println("Error at " + name + " row number " + row_number);
+		    	}
 		    }
 		}
 		
